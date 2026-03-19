@@ -27,44 +27,19 @@ input,textarea,select{font-family:inherit}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--dm);border-radius:3px}
 
-/* ══════ SETUP SCREEN ══════ */
-.setup-screen{display:flex;align-items:center;justify-content:center;height:100vh;position:relative;overflow:hidden}
-.setup-screen::before{content:'';position:absolute;width:700px;height:700px;background:radial-gradient(circle,var(--accg) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:glow 5s ease-in-out infinite;pointer-events:none}
-@keyframes glow{0%,100%{opacity:.3;transform:translate(-50%,-50%) scale(1)}50%{opacity:.6;transform:translate(-50%,-50%) scale(1.15)}}
-.setup-box{background:var(--bg2);border:1px solid var(--brd2);border-radius:18px;padding:40px 36px;width:520px;max-width:92vw;max-height:90vh;overflow-y:auto;position:relative;z-index:1;box-shadow:0 8px 40px rgba(0,0,0,.5);animation:rise .5s ease}
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.setup-logo{font-family:var(--fm);font-size:30px;font-weight:700;color:var(--acc2);text-align:center;letter-spacing:-1px;margin-bottom:4px}
-.setup-sub{text-align:center;color:var(--mt);font-size:13px;margin-bottom:28px}
-.setup-step{margin-bottom:20px}
-.setup-step h4{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:4px;display:flex;align-items:center;gap:8px}
-.setup-step h4 .num{background:var(--acc);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
-.setup-step p{font-size:12px;color:var(--mt);margin-bottom:10px;line-height:1.6}
-.setup-step a{color:var(--acc2);text-decoration:none}
-.setup-step a:hover{text-decoration:underline}
-.setup-step code{background:var(--bg4);padding:2px 7px;border-radius:4px;font-family:var(--fm);font-size:11px;color:var(--acc3)}
-.s-input{width:100%;padding:10px 14px;background:var(--bg3);border:1px solid var(--brd2);border-radius:var(--rs);color:var(--txt);font-size:13px;outline:none;transition:var(--tr);margin-bottom:6px}
-.s-input:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--accg)}
-.s-input::placeholder{color:var(--dm)}
-.s-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.s-btn{width:100%;padding:13px;background:var(--acc);color:#fff;font-size:14px;font-weight:700;border-radius:var(--r);transition:var(--tr);margin-top:8px;letter-spacing:.3px}
-.s-btn:hover{background:#2563eb;transform:translateY(-1px);box-shadow:0 4px 20px var(--accg)}
-.s-error{color:var(--red);font-size:12px;margin-top:8px;display:none}
-.s-btn-secondary{width:100%;padding:10px;background:var(--bg4);color:var(--mt);font-size:12px;font-weight:600;border-radius:var(--r);transition:var(--tr);margin-top:6px}
-.s-btn-secondary:hover{background:var(--bg5);color:var(--txt)}
-
 /* ══════ LOGIN ══════ */
-.login-screen{display:none;align-items:center;justify-content:center;height:100vh;position:relative;overflow:hidden}
+.login-screen{display:flex;align-items:center;justify-content:center;height:100vh;position:relative;overflow:hidden}
 .login-screen::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,var(--accg) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:glow 4s ease-in-out infinite;pointer-events:none}
+@keyframes glow{0%,100%{opacity:.3;transform:translate(-50%,-50%) scale(1)}50%{opacity:.6;transform:translate(-50%,-50%) scale(1.15)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .login-box{background:var(--bg2);border:1px solid var(--brd2);border-radius:16px;padding:44px 36px;width:400px;max-width:90vw;text-align:center;position:relative;z-index:1;box-shadow:0 8px 40px rgba(0,0,0,.5);animation:rise .5s ease}
 .login-logo{font-family:var(--fm);font-size:28px;font-weight:700;color:var(--acc2);margin-bottom:4px;letter-spacing:-1px}
 .login-sub{color:var(--mt);font-size:13px;margin-bottom:28px}
 .login-input{width:100%;padding:13px 18px;background:var(--bg3);border:1px solid var(--brd2);border-radius:var(--r);color:var(--txt);font-size:14px;outline:none;transition:var(--tr);margin-bottom:14px}
 .login-input:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--accg)}
 .login-btn{width:100%;padding:13px;background:var(--acc);color:#fff;font-size:14px;font-weight:700;border-radius:var(--r);transition:var(--tr);letter-spacing:.3px}
-.login-btn:hover{background:#2563eb}
+.login-btn:hover{background:#2563eb;transform:translateY(-1px);box-shadow:0 4px 20px var(--accg)}
 .login-err{color:var(--red);font-size:12px;margin-top:10px;display:none}
-.login-reset{margin-top:16px;font-size:11px;color:var(--dm);background:none;text-decoration:underline;cursor:pointer}
-.login-reset:hover{color:var(--mt)}
 
 /* ══════ APP ══════ */
 .app{display:none;height:100vh;flex-direction:column}
@@ -186,6 +161,10 @@ input,textarea,select{font-family:inherit}
 .csw:hover{transform:scale(1.15)}
 .csw.sel{border-color:#fff;transform:scale(1.15)}
 
+/* ══════ TOAST ══════ */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--bg4);border:1px solid var(--brd2);border-radius:var(--r);padding:10px 20px;font-size:13px;color:var(--acc2);z-index:999;display:none;animation:rise .3s ease;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.toast.show{display:block}
+
 @media(max-width:768px){
   .hdr{padding:8px 12px;flex-wrap:wrap}
   .hdr-c{display:none}
@@ -197,59 +176,14 @@ input,textarea,select{font-family:inherit}
 </head>
 <body>
 
-<!-- ══════ SETUP SCREEN ══════ -->
-<div class="setup-screen" id="setupScreen">
-  <div class="setup-box">
-    <div class="setup-logo">TeamBoard</div>
-    <div class="setup-sub">Configuração do Firebase — só precisa fazer 1 vez</div>
-
-    <div class="setup-step">
-      <h4><span class="num">1</span> Criar projeto no Firebase</h4>
-      <p>Acesse <a href="https://console.firebase.google.com/" target="_blank">console.firebase.google.com</a> → clique em <strong>"Adicionar projeto"</strong> → dê um nome (ex: "teamboard") → pode desativar o Analytics → <strong>Criar projeto</strong>.</p>
-    </div>
-
-    <div class="setup-step">
-      <h4><span class="num">2</span> Ativar Realtime Database</h4>
-      <p>No menu lateral: <strong>Criação → Realtime Database → Criar banco de dados</strong>. Escolha a região, selecione <strong>"Iniciar no modo de teste"</strong> e clique em Ativar.</p>
-    </div>
-
-    <div class="setup-step">
-      <h4><span class="num">3</span> Pegar credenciais</h4>
-      <p>Clique na <strong>engrenagem ⚙ → Configurações do projeto → Geral</strong>. Em "Seus aplicativos" clique em <code>&lt;/&gt;</code> (Web), registre o app e copie os valores:</p>
-    </div>
-
-    <div class="setup-step">
-      <input class="s-input" id="cfgApiKey" placeholder="apiKey (ex: AIzaSy...)">
-      <input class="s-input" id="cfgDomain" placeholder="authDomain (ex: meu-projeto.firebaseapp.com)">
-      <input class="s-input" id="cfgDbUrl" placeholder="databaseURL (ex: https://meu-projeto-default-rtdb.firebaseio.com)">
-      <input class="s-input" id="cfgProjId" placeholder="projectId (ex: meu-projeto)">
-      <input class="s-input" id="cfgBucket" placeholder="storageBucket (ex: meu-projeto.appspot.com)">
-      <div class="s-row">
-        <input class="s-input" id="cfgMsgId" placeholder="messagingSenderId">
-        <input class="s-input" id="cfgAppId" placeholder="appId">
-      </div>
-    </div>
-
-    <div class="setup-step">
-      <h4><span class="num">4</span> Definir senha da equipe</h4>
-      <input class="s-input" id="cfgPassword" placeholder="Senha que a equipe usará para acessar" type="password">
-    </div>
-
-    <button class="s-btn" id="setupBtn" onclick="saveSetup()">Conectar e Iniciar</button>
-    <div class="s-error" id="setupError"></div>
-    <button class="s-btn-secondary" id="setupSkip" style="display:none" onclick="skipSetup()">Já configurei antes — ir para login</button>
-  </div>
-</div>
-
-<!-- ══════ LOGIN SCREEN ══════ -->
+<!-- ══════ LOGIN ══════ -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
     <div class="login-logo">TeamBoard</div>
     <div class="login-sub">Acesso restrito à equipe</div>
     <input type="password" class="login-input" id="pwInput" placeholder="Senha da equipe" autocomplete="off">
     <button class="login-btn" onclick="tryLogin()">Entrar</button>
-    <div class="login-err" id="loginErr">Senha incorreta.</div>
-    <button class="login-reset" onclick="resetConfig()">Reconfigurar Firebase</button>
+    <div class="login-err" id="loginErr">Senha incorreta. Tente novamente.</div>
   </div>
 </div>
 
@@ -258,7 +192,7 @@ input,textarea,select{font-family:inherit}
   <header class="hdr">
     <div class="hdr-l">
       <div class="logo">TB</div>
-      <input class="bname" id="boardName" value="Meu Projeto" onchange="updateBoardName(this.value)">
+      <input class="bname" id="boardName" value="" onchange="updateBoardName(this.value)">
       <div class="online-tag"><span class="online-dot"></span><span id="onlineCount">1</span> online</div>
     </div>
     <div class="hdr-c" id="filterBar"></div>
@@ -332,67 +266,42 @@ input,textarea,select{font-family:inherit}
   </div>
 </div>
 
+<!-- ══════ TOAST ══════ -->
+<div class="toast" id="toast"></div>
+
 <script>
+// ═══════════════ FIREBASE CONFIG (HARDCODED) ═══════════════
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyBD-JTKsQ5raBLZIXpgFBhvVCeuMwopMAM",
+  authDomain: "teamboard-ff67a.firebaseapp.com",
+  databaseURL: "https://teamboard-ff67a-default-rtdb.firebaseio.com",
+  projectId: "teamboard-ff67a",
+  storageBucket: "teamboard-ff67a.firebasestorage.app",
+  messagingSenderId: "605818340619",
+  appId: "1:605818340619:web:baade0ba07ba0404face0e"
+};
+
 // ═══════════════ CONSTANTS ═══════════════
 const COLORS = ['#3b82f6','#60a5fa','#0ea5e9','#06b6d4','#14b8a6','#22c55e','#84cc16','#eab308','#f97316','#ef4444','#e11d48','#ec4899','#a855f7','#8b5cf6','#6366f1'];
 const AV_COLS = ['#3b82f6','#0ea5e9','#22c55e','#f97316','#e11d48','#a855f7','#eab308','#06b6d4'];
 
-let db = null, boardRef = null, state = null;
+let db, boardRef, state = null;
 let editCardId = null, editCardColId = null, editColColorId = null;
 let filters = { member: null, label: null, priority: null };
 let nextLblColor = COLORS[0], myPresenceKey = null;
 
+// ═══════════════ INIT FIREBASE ═══════════════
+firebase.initializeApp(FIREBASE_CONFIG);
+db = firebase.database();
+boardRef = db.ref('board');
+
+// ═══════════════ HASH ═══════════════
 function hashStr(s){let h=0;for(let i=0;i<s.length;i++){h=((h<<5)-h+s.charCodeAt(i))|0}return h.toString()}
 
-// ═══════════════ FIREBASE CONFIG ═══════════════
-function getSavedConfig() { try { return JSON.parse(localStorage.getItem('tb_firebase_config')); } catch(e) { return null; } }
-
-function saveSetup() {
-  const cfg = {
-    apiKey: document.getElementById('cfgApiKey').value.trim(),
-    authDomain: document.getElementById('cfgDomain').value.trim(),
-    databaseURL: document.getElementById('cfgDbUrl').value.trim(),
-    projectId: document.getElementById('cfgProjId').value.trim(),
-    storageBucket: document.getElementById('cfgBucket').value.trim(),
-    messagingSenderId: document.getElementById('cfgMsgId').value.trim(),
-    appId: document.getElementById('cfgAppId').value.trim()
-  };
-  const pw = document.getElementById('cfgPassword').value.trim();
-  const errEl = document.getElementById('setupError');
-
-  if (!cfg.apiKey || !cfg.databaseURL || !cfg.projectId) {
-    errEl.textContent = 'Preencha pelo menos apiKey, databaseURL e projectId.'; errEl.style.display = 'block'; return;
-  }
-  if (!pw) { errEl.textContent = 'Defina uma senha para a equipe.'; errEl.style.display = 'block'; return; }
-
-  try { firebase.initializeApp(cfg); db = firebase.database(); boardRef = db.ref('board'); }
-  catch(e) { errEl.textContent = 'Erro: ' + e.message; errEl.style.display = 'block'; return; }
-
-  localStorage.setItem('tb_firebase_config', JSON.stringify(cfg));
-
-  boardRef.set(getDefault(pw)).then(() => {
-    document.getElementById('setupScreen').style.display = 'none';
-    document.getElementById('loginScreen').style.display = 'flex';
-  }).catch(e => { errEl.textContent = 'Erro ao salvar: ' + e.message; errEl.style.display = 'block'; });
-}
-
-function skipSetup() {
-  const cfg = getSavedConfig(); if (!cfg) return;
-  initFB(cfg);
-  document.getElementById('setupScreen').style.display = 'none';
-  document.getElementById('loginScreen').style.display = 'flex';
-}
-
-function initFB(cfg) {
-  if (!firebase.apps.length) firebase.initializeApp(cfg);
-  db = firebase.database(); boardRef = db.ref('board');
-}
-
-function resetConfig() { localStorage.removeItem('tb_firebase_config'); sessionStorage.removeItem('tb_auth'); location.reload(); }
-
-function getDefault(pw) {
+// ═══════════════ DEFAULT STATE ═══════════════
+function getDefault() {
   return {
-    password: hashStr(pw || 'equipe123'), boardName: 'Meu Projeto',
+    password: hashStr('inova2026'), boardName: 'Atividades Inovação',
     members: {
       m1: { name: 'Ana', color: AV_COLS[0] },
       m2: { name: 'Lucas', color: AV_COLS[1] },
@@ -422,18 +331,33 @@ function getDefault(pw) {
 function tryLogin() {
   const pw = document.getElementById('pwInput').value;
   boardRef.child('password').once('value', snap => {
-    if (hashStr(pw) === snap.val()) {
-      sessionStorage.setItem('tb_auth', '1');
-      document.getElementById('loginScreen').style.display = 'none';
-      document.getElementById('app').classList.add('active');
-      startListening();
-    } else {
-      document.getElementById('loginErr').style.display = 'block';
-      document.getElementById('pwInput').value = '';
+    const stored = snap.val();
+    // If no password stored yet (first time), initialize the board
+    if (stored === null) {
+      boardRef.set(getDefault()).then(() => {
+        if (hashStr(pw) === hashStr('inova2026')) { enterApp(); } 
+        else { showLoginErr(); }
+      });
+      return;
     }
+    if (hashStr(pw) === stored) { enterApp(); }
+    else { showLoginErr(); }
   });
 }
-document.getElementById('pwInput')?.addEventListener('keydown', e => { if(e.key==='Enter') tryLogin(); });
+
+function enterApp() {
+  sessionStorage.setItem('tb_auth', '1');
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('app').classList.add('active');
+  startListening();
+}
+
+function showLoginErr() {
+  document.getElementById('loginErr').style.display = 'block';
+  document.getElementById('pwInput').value = '';
+}
+
+document.getElementById('pwInput').addEventListener('keydown', e => { if(e.key==='Enter') tryLogin(); });
 
 function logout() {
   if (myPresenceKey) db.ref('presence/' + myPresenceKey).remove();
@@ -445,9 +369,10 @@ function changePassword() {
   if (!np) return;
   boardRef.child('password').set(hashStr(np));
   closeModal('pwModal'); document.getElementById('newPwIn').value = '';
+  showToast('Senha alterada com sucesso!');
 }
 
-// ═══════════════ REALTIME ═══════════════
+// ═══════════════ REALTIME LISTENER ═══════════════
 function startListening() {
   boardRef.on('value', snap => {
     state = snap.val();
@@ -524,7 +449,6 @@ function createCardEl(cardId, card, colId) {
   const div = document.createElement('div'); div.className = 'card'; div.draggable = true;
   div.addEventListener('dragstart', e => { e.dataTransfer.setData('text/plain', cardId); e.dataTransfer.setData('from-col', colId); div.classList.add('dragging'); });
   div.addEventListener('dragend', () => div.classList.remove('dragging'));
-
   const lblIds = (card.labels||'').split(',').filter(Boolean);
   let lh = '';
   if (lblIds.length && state.labels) {
@@ -546,15 +470,15 @@ function createCardEl(cardId, card, colId) {
 
 // ═══════════════ FILTERS ═══════════════
 function matchFilters(c) {
-  if (filters.member) { if (!(c.members||'').split(',').includes(filters.member)) return false; }
-  if (filters.label) { if (!(c.labels||'').split(',').includes(filters.label)) return false; }
+  if (filters.member && !(c.members||'').split(',').includes(filters.member)) return false;
+  if (filters.label && !(c.labels||'').split(',').includes(filters.label)) return false;
   if (filters.priority && c.priority !== filters.priority) return false;
   return true;
 }
 
 function renderFilters() {
   const bar = document.getElementById('filterBar'); bar.innerHTML = '';
-  // Member
+  // Member filter
   const mw = document.createElement('div'); mw.style.position='relative';
   const mb = document.createElement('button'); mb.className = 'fbtn'+(filters.member?' on':'');
   mb.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> ${filters.member && state.members?.[filters.member] ? state.members[filters.member].name : 'Membro'}`;
@@ -567,7 +491,7 @@ function renderFilters() {
     opt.onclick=()=>{filters.member=id;render();}; mdd.appendChild(opt);
   }); mw.appendChild(mdd); bar.appendChild(mw);
 
-  // Label
+  // Label filter
   const lw = document.createElement('div'); lw.style.position='relative';
   const lb = document.createElement('button'); lb.className = 'fbtn'+(filters.label?' on':'');
   lb.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> ${filters.label && state.labels?.[filters.label] ? state.labels[filters.label].name : 'Label'}`;
@@ -580,7 +504,7 @@ function renderFilters() {
     opt.onclick=()=>{filters.label=id;render();}; ldd.appendChild(opt);
   }); lw.appendChild(ldd); bar.appendChild(lw);
 
-  // Priority
+  // Priority filter
   const pw = document.createElement('div'); pw.style.position='relative';
   const pb = document.createElement('button'); const pn={high:'Alta',medium:'Média',low:'Baixa'};
   pb.className = 'fbtn'+(filters.priority?' on':'');
@@ -670,7 +594,7 @@ function saveCard() {
   closeModal('cardModal');
 }
 
-function deleteCard() { if (!confirm('Excluir?')) return; boardRef.child(`columns/${editCardColId}/cards/${editCardId}`).remove(); closeModal('cardModal'); }
+function deleteCard() { if (!confirm('Excluir esta tarefa?')) return; boardRef.child(`columns/${editCardColId}/cards/${editCardId}`).remove(); closeModal('cardModal'); }
 
 function moveCard(cardId, fromColId, toColId) {
   if (fromColId === toColId) return;
@@ -683,7 +607,7 @@ function moveCard(cardId, fromColId, toColId) {
   });
 }
 
-// ═══════════════ MANAGE ═══════════════
+// ═══════════════ MANAGE MODAL ═══════════════
 function openManageModal() { renderManage(); openModal('manageModal'); }
 
 function renderManage() {
@@ -741,21 +665,17 @@ document.querySelectorAll('.mo').forEach(el => { el.addEventListener('click', e 
 
 function esc(s) { const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
 
-// ═══════════════ INIT ═══════════════
-(function() {
-  const cfg = getSavedConfig();
-  if (cfg) {
-    initFB(cfg);
-    document.getElementById('setupScreen').style.display = 'none';
-    if (sessionStorage.getItem('tb_auth') === '1') {
-      document.getElementById('app').classList.add('active');
-      startListening();
-    } else {
-      document.getElementById('loginScreen').style.display = 'flex';
-    }
-    document.getElementById('setupSkip').style.display = 'block';
-  }
-})();
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ═══════════════ AUTO-LOGIN CHECK ═══════════════
+if (sessionStorage.getItem('tb_auth') === '1') {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('app').classList.add('active');
+  startListening();
+}
 </script>
 </body>
 </html>
